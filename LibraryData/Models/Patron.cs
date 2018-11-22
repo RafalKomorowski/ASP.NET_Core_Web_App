@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ASP.NET_Core_Web_App.Models
+namespace LibraryData
 {
     public class Patron
     {

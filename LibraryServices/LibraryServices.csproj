@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ASP.NET_Core_Web_App\ASP.NET_Core_Web_App.csproj" />
+    <ProjectReference Include="..\LibraryData\LibraryData.csproj" />
+  </ItemGroup>
+
+</Project>
