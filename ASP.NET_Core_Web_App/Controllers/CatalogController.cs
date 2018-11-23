@@ -40,5 +40,27 @@ namespace ASP.NET_Core_Web_App.Controllers
             return View(model);
         }
 
+        public IActionResult Detail( int id)
+        {
+            var asset = _assets.GetById(id);
+
+
+            var model = new AssetDetailModel
+            {
+                AssetID = id,
+                Title = asset.Title,
+                Year = asset.Year,
+                Cost = asset.Cost,
+                Status = asset.Status.Name,
+                ImageUrl = asset.ImageUrl,
+                AuthorOrDirector = _assets.GetAuthorOrDirectior(id),
+                CurrentLocation = _assets.GetCurrentLocation(id).Name,
+                DeweyCallNumber = _assets.GetDeweyIndex(id),
+                ISBN = _assets.GetIsbn(id)
+            };
+            return View(model);
+
+        }
+
     }
 }

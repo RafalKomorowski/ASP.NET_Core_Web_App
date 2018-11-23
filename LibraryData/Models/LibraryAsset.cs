@@ -19,7 +19,7 @@ namespace LibraryData
         [Required]
         public Status Status { get; set; }
 
-        [Required]
+        [Required]       
         public decimal Cost { get; set; }
 
         public string ImageUrl { get; set; }

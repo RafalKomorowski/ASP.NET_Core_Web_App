@@ -2,7 +2,7 @@
 
 <div>
     <h3>Library Catalog</h3>
-    <div id=" = "assetsTable">
+    <div id=" = " assetsTable">
         <table class="table table-condensed" id="catalogIndexTable">
             <thead>
                 <tr>
@@ -16,8 +16,9 @@
             <tbody>
                 @foreach (var asset in Model.Assets)
                 {
+
                     <tr class="assetRow">
-                        <td class= "">
+                        <td class="">
                             <a asp-controller="Catalog" asp-action="Detail" asp-route-id="@asset.Id">
                                 <img src="@asset.ImageUrl" class="imageCell" />
                             </a>
@@ -27,7 +28,8 @@
                         <td class="">@asset.DeweyCallNumber</td>
                     </tr>
                 }
-            </tbody>foreach
+            </tbody>
+
         </table>
     </div>
 </div>

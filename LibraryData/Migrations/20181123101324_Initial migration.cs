@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace LibraryData.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class Initialmigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -87,22 +87,15 @@ namespace LibraryData.Migrations
                     Address = table.Column<string>(nullable: true),
                     DateOFBirth = table.Column<DateTime>(nullable: false),
                     TelephoneNumber = table.Column<string>(nullable: true),
-                    LibraryCardId = table.Column<int>(nullable: true),
-                    HomeLibraryBranchId = table.Column<int>(nullable: true)
+                    LibraryBranchId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Patrons", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Patrons_LibraryBranches_HomeLibraryBranchId",
-                        column: x => x.HomeLibraryBranchId,
+                        name: "FK_Patrons_LibraryBranches_LibraryBranchId",
+                        column: x => x.LibraryBranchId,
                         principalTable: "LibraryBranches",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Patrons_LibraryCards_LibraryCardId",
-                        column: x => x.LibraryCardId,
-                        principalTable: "LibraryCards",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -272,14 +265,9 @@ namespace LibraryData.Migrations
                 column: "StatusId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Patrons_HomeLibraryBranchId",
+                name: "IX_Patrons_LibraryBranchId",
                 table: "Patrons",
-                column: "HomeLibraryBranchId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Patrons_LibraryCardId",
-                table: "Patrons",
-                column: "LibraryCardId");
+                column: "LibraryBranchId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
