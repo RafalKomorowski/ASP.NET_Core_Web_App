@@ -34,7 +34,7 @@ namespace ASP.NET_Core_Web_App.Controllers
 
             var model = new AssetIndexModel()
             {
-                Asseet = listingResult
+                Assets = listingResult
             };
 
             return View(model);

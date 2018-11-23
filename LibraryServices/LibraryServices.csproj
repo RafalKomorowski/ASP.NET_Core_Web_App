@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ASP.NET_Core_Web_App\ASP.NET_Core_Web_App.csproj" />
     <ProjectReference Include="..\LibraryData\LibraryData.csproj" />
   </ItemGroup>
 

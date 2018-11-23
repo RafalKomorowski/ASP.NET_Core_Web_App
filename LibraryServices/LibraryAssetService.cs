@@ -7,7 +7,7 @@ using System.Text;
 
 namespace LibraryServices
 {
-    class LibraryAssetService : ILibraryAsset
+   public class LibraryAssetService : ILibraryAsset
     {
         private LibraryContext _context;
 
